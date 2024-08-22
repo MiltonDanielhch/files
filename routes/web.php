@@ -12,20 +12,26 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware(['log'])->group(function () {
+    Route::get('/', function () {
+        return redirect('admin');
+    });
+
+
+
+
+});
+
 
 Route::get('login', function () {
     return redirect('admin/login');
 })->name('login');
 
-Route::get('/', function () {
-    return redirect('admin');
-});
-
 Route::get('maintenance', function () {
     return view('errors.maintenance');
 })->name('errors.maintenance');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'desarrollo.creativo'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['log', 'desarrollo.creativo']], function () {
     Voyager::routes();
 });
 

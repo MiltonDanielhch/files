@@ -230,6 +230,8 @@ return [
           'image/gif',
           'image/bmp',
           'video/mp4',
+          'application/pdf',
+          'image/webp',
         ],
         //Path for media-manager. Relative to the filesystem.
         'path'                => '/',
