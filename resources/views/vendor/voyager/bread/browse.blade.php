@@ -396,5 +396,17 @@
             });
             $('.selected_ids').val(ids);
         });
+
+        $('.btn-copy-link').click(function(e){
+            e.preventDefault();
+            navigator.clipboard.writeText($(this).data('url'))
+            .then(() => {
+                toastr.success('Link copiado', 'Bien hecho')
+            })
+            .catch(err => {
+                console.error('Error al copiar al portapapeles:', err)
+                toastr.error('No se puede copiar', 'Error')
+            })
+        });
     </script>
 @stop

@@ -5,6 +5,8 @@ namespace App\Providers;
 // use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
+use TCG\Voyager\Facades\Voyager;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -25,5 +27,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
+        Voyager::addAction(\App\Actions\CopyAction::class);
     }
 }

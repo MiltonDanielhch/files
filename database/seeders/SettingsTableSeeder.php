@@ -68,7 +68,7 @@ class SettingsTableSeeder extends Seeder
                 'id' => 6,
                 'key' => 'admin.title',
                 'display_name' => 'Admin Title',
-                'value' => 'Template',
+                'value' => 'Archivos',
                 'details' => '',
                 'type' => 'text',
                 'order' => 1,
@@ -116,6 +116,17 @@ class SettingsTableSeeder extends Seeder
                 'details' => NULL,
                 'type' => 'checkbox',
                 'order' => 6,
+                'group' => 'System',
+            ),
+            9 => 
+            array (
+                'id' => 12,
+                'key' => 'system.logo-qr',
+                'display_name' => 'Logo del QR',
+                'value' => '',
+                'details' => NULL,
+                'type' => 'image',
+                'order' => 7,
                 'group' => 'System',
             ),
         ));
